@@ -16,6 +16,9 @@ class Survei extends CI_Controller
   function index()
   {
     $id = $this->session->userdata('id_peg');
+    if ($this->session->userdata('level') == 'Admin') {
+      $id = null;
+    }
     $data['survei'] = $this->Model_Survei->getDatasurvei($id)->result();
     $this->template->load('template/template', 'survei/view_survei', $data);
   }

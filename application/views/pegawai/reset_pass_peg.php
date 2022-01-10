@@ -1,6 +1,7 @@
 <form action="<?php echo base_url() ?>Pegawai/resetpasspegawai_act" class="formresetPass" method="POST" >
   <div class="form-group mb-3">
     <input type="hidden" value="<?php echo $pegawai['username']; ?>" class="form-control" name="username">
+    <input type="hidden" value="<?php echo $pegawai['id_peg']; ?>" class="form-control" name="id_peg">
     <label class="form-label">Masukkan Password Baru</label>
     <input type="password" class="form-control" name="password_baru">
   </div>

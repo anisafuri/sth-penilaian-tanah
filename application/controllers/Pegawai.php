@@ -183,16 +183,17 @@ class Pegawai extends CI_Controller
 
       $password_baru = $this->input->post('password_baru');
       $ulangi_password = $this->input->post('ulangi_password');
+      $id_peg = $this->input->post('id_peg');
 
       $data = array('password' => md5($password_baru));
-      $id = array('id_peg' => $id_peg = $this->uri->segment(3));
+      $id = array('id_peg' => $id_peg);
 
       $this->Model_Pegawai->updatePassword($id, $data, 'pegawai');
       $this->session->set_flashdata('msg','<div class="alert alert-success" role="alert">
       <i class="fa fa-check"></i>
       Password Berhasil Diubah, Silahkan Logout dan Login Kembali dengan Password Baru Anda.
       </div>');
-      redirect('Pegawai/resetpasspegawai');
+      redirect('Pegawai');
 
   }
 
