@@ -176,7 +176,7 @@ class Pegawai extends CI_Controller
   function resetpasspegawai(){
     $id_peg = $this->uri->segment(3);
     $data['pegawai'] = $this->Model_Pegawai->getPegawai($id_peg)->row_array();
-    $this->load->view('pegawai/reset_pass_peg');
+    $this->load->view('pegawai/reset_pass_peg', $data);
   }
 
   function resetpasspegawai_act(){
